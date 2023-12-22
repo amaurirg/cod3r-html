@@ -1,0 +1,141 @@
+<!-- Sobrescrito e Subscrito -->
+<p>2<sup>2</sup> = 4 e H<sub>2</sub>O = Água</p>
+
+<!-- Negrito/Itálico Usando a tag mais correta para leitor de página para deficientes por exemplo -->
+<p><b>Cuidado!</b> Alta voltagem! <i>Somente pessoal autorizado.</i></p>
+<p>
+  <strong>Cuidado!</strong> Alta voltagem!
+  <em>Somente pessoal autorizado.</em>
+</p>
+
+<!-- Citação -->
+<p>Fulano disse que <q>Uma citação aparecerá com aspas</q></p>
+
+<!-- Outras tags -->
+<abbr title="Professor">Prof</abbr> Fulano em seu livro
+<cite>Livro bem legal</cite> definiu mais precisamente...
+<p><dfn>Buraco Negro</dfn> é a região do espaço que...</p>
+<address>Rua ABC, n<sup>o</sup> 123</address>
+<p>O Oscar vai para <del>La La Land</del> <ins>Moonlight</ins></p>
+<p>Computador de <s>R$ 2499,00</s> por R$ 1899,00</p>
+
+<hr />
+
+<!-- Lista de definição -->
+<h2>Principais termos do glossário de Cloud Computing</h2>
+<dl>
+  <dt>Bass</dt>
+  <dd>Backend Como Serviço</dd>
+  <dt>Iass</dt>
+  <dd>Infraestrutura Como Serviço</dd>
+  <dt>Pass</dt>
+  <dd>Plataforma Como Serviço</dd>
+  <dt>Sass</dt>
+  <dd>Software Como Serviço</dd>
+</dl>
+
+<hr />
+
+<!-- Lista aninhada -->
+<h2>Lista aninhada</h2>
+<ul class="tree">
+  <li>
+    <span vm-folder>Backend</span>
+    <ul>
+      <li>
+        <span vm-folder>app</span>
+        <ul>
+          <li>produto.js</li>
+          <li>usuario.js</li>
+          <li>venda.js</li>
+        </ul>
+      </li>
+      <li>
+        <span vm-folder>config</span>
+        <ul>
+          <li>banco.js</li>
+          <li>rotas.js</li>
+          <li>servidor.js</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <span vm-folder>Frontend</span>
+    <ul>
+      <li>
+        <span vm-folder>public</span>
+        <ul>
+          <li>app.css</li>
+          <li>app.js</li>
+          <li>index.html</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<link
+  rel="stylesheet"
+  href="http://files.cod3r.com.br/curso-web/tree.css"
+/>
+<script>
+  document.querySelectorAll("[vm-folder]").forEach((folder) => {
+    folder.style.cursor = "pointer";
+    folder.onclick = function () {
+      const ul = folder.nextElementSibling;
+      const d = ul.style.display;
+      ul.style.display = d === "none" ? "block" : "none";
+    };
+  });
+</script>
+
+<hr />
+
+<!-- Links -->
+<h2 id="links">Links</h2>
+<a href="mailto:email@empresa.com.br">Entre em contato</a><br><br>
+<div id="noticia" style="position: absolute; top: 2000px">
+    <h1>Notícia de última hora</h1>
+    <a href="#links">Voltar para link da notícia</a>
+</div>
+<a href="#noticia">Ir para notícia</a>
+
+<hr>
+
+<!-- Tabela -->
+<h2>Tabela</h2>
+<table>
+    <caption>Produtos</caption>
+    <thead>
+        <tr>
+            <th>Produto</th>
+            <th>Preço</th>
+            <th>Quantidade</th>
+            <th>Total</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>iPad</td>
+            <td>3289,00</td>
+            <td>3</td>
+            <td>9867,00</td>
+        </tr>
+        <tr>
+            <td>Samsung S9</td>
+            <td>2649,00</td>
+            <td>5</td>
+            <td>13245,00</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="3" rowspan="2">Total</td>
+            <td>-----</td>
+         </tr>
+         <tr>
+            <td>23112</td>
+         </tr>
+    </tfoot>
+</table>

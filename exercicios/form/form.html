@@ -1,0 +1,59 @@
+<!-- Dentro da pasta form, criar o package.json -->
+<!-- npm init -y -->
+
+<!-- Instalar as dependências para rodar o servidor no arquivo server.js-->
+<!-- npm i --save express@4.16.3 body-parser@1.18.2 -E -->
+<!-- o argumento -E serve para instalar a versão exata-->
+
+<h1>Formulário</h1>
+
+<!-- <form action="http://localhost:3003/usuarios" method="post"> -->
+<form>
+    <!-- Esse input serve para armazenar um id por exemplo -->
+    <input type="hidden" name="id" value="3">
+    <input type="text" name="nome" placeholder="Nome">
+    <input type="password" name="senha" placeholder="Senha">
+    <textarea name="bio" cols="30" rows="10" placeholder="Biografia"></textarea>
+    
+    <div>
+        <input type="radio" name="tipo" value="admin"> Admin
+        <input type="radio" name="tipo" value="regular"> Regular
+        <input type="radio" name="tipo" value="professor"> Professor
+    </div>
+    
+    <div>
+        <input type="checkbox" name="ativo"> Ativo
+    </div>
+    
+    <select name="estado">
+        <option value="">Selecione</option>
+        <option value="ac">Acre</option>
+        <option value="ba">Bahia</option>
+        <option value="ce">Ceará</option>
+    </select>
+    
+    <select name="interesses" multiple size="5">
+        <option value="">Selecione</option>
+        <option value="js">JavaScript</option>
+        <option value="java">Java</option>
+        <option value="php">PHP</option>
+        <option value="python">Python</option>
+        <option value="go">Go</option>
+        <option value="c">C</option>
+    </select>
+
+    <!-- Pode-se colocar opções de action nos botões -->
+    <button formaction="http://localhost:3003/usuarios" formmethod="post">Incluir</button>
+    <button formaction="http://localhost:3003/usuario/3" formmethod="post">Alterando</button>
+</form>
+
+<style>
+    input, textarea, select {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    input[type=radio], input[type=checkbox] {
+        display: inline;
+    }
+</style>
